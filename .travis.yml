@@ -1,5 +1,14 @@
 sudo: false
 language: ruby
 rvm:
-  - 2.4.3
+- 2.4.3
+- 2.3.6
 before_install: gem install bundler -v 1.16.1
+deploy:
+  provider: rubygems
+  api_key:
+    secure: ZKD3i+fg6BQuUaPPKZFNkZhpvGpuAlu3isR9xDnKPJsit4Moq2I1DcJH/zMSL+mXJ6RYVrg0e3B/jHKkB81aXQjht4MK+4Dt1zQrL1ylnphIFp/fk4P0TnNiO4Z4TLaVL9Vvtlv/c5Hr48GrzgMAEBjsjAa3OwpVJA7WBhmURoRNEwmTioZUaVLAlaFNnHkL2l/78Di1Nisd0BulSAcjJpGevOPDsQKlInJOi7EkGDyoecfW314OcpbBnGFPz9YXBXhzzUKjrtdB9vKibQoGh3XYCI+FaDSa2zAkheLYlYcBvuBAJStgDO3o95nAtvV9a8hiRhG0FVnUj1w4E7C0msn9fl1Q2nv+jsBRas9RcYp6MWe0VH0mf95PgeiYlCqksriMce0BwM3TU0a4R+8pR4Gmebn5hdr+y/q/Hia9dEQBCeiB29O6rlon2qc6ufc8LIaD0EXRaRaEQPE/ONinpY3E/WiczDsTS2AhquFf0xqRBNmyXeRjTvcsXrtnMPH7HYJUCHsrzkU5qgwUcLMEQsLEr05Th8t/VOE9EbNJQ+o+rvxuv/ACxaxHgCPs9n74ElJgyS6YFLHnMXicy+BdNNMrxtYSEOC4g5v/ORB/fDOEPKdi6z19YpkOgX1ZNaFdJmuKpqFxroMKETLJQLBkqcTJLKxonV5R3jRF3xPX53o=
+  gem: ssm_utils
+  on:
+    tags: true
+    repo: dkolb/ssm_utils
