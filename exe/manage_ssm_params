@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+# vi: set ft=ruby
+require 'ssm_utils'
+
+SsmUtils::ManageParamsApp.new.run 

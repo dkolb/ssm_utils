@@ -1,0 +1,15 @@
+TestApplication:
+  e2e:
+    DBHosts:
+      _value: somedb.example.com,somedb2.example.com
+      _type: StringList
+    DBUser: app_user
+    DBPassword:
+      _value: super-secret-password
+      _type: SecureString
+      _key: alias/myAppKey
+    FeatureFlag:
+      _value: true
+      _type: String
+  uat:
+    FeatureFlag: true
