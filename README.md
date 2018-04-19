@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dkolb/ssm_utils.svg?branch=master)](https://travis-ci.org/dkolb/ssm_utils)
 [![Gem Version](https://badge.fury.io/rb/ssm_utils.svg)](https://badge.fury.io/rb/ssm_utils)
+[![Dependency Status](https://gemnasium.com/badges/github.com/dkolb/ssm_utils.svg)](https://gemnasium.com/github.com/dkolb/ssm_utils)
 
 ## Introduction
 The intended workflow is to use `manage_ssm_params get` to retrieve a subtree
