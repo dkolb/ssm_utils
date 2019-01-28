@@ -41,8 +41,8 @@ module SsmUtils
           the reverse of the mappings used by get.
         EOF
         c.option '--file FILE', String, 'File to retrieve account to.'
+        c.option '--retry-limit INTEGER', Integer, 'increase retry limit, default 3'
         c.option '--[no-]overwrite', 'Overwrite exitings strings, default true'
-        c.option '--[retry-]limit', 'increase retry limit, default 3'
         c.when_called do |args, options|
           options.default(overwrite: true, retry_limit: 3)
           PutParamsCommand.new(
