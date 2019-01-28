@@ -22,7 +22,7 @@ module SsmUtils
         EOF
         c.option '--file FILE', String, 'File to retrieve account to.'
         c.option '--[no-]decrypt', 'Decrypt SecureStrings, default true'
-        c.option '--ssm_root PATH_ROOT', String, 
+        c.option '--ssm_root PATH_ROOT', String,
           "A path root to retrieve from, default is '/'"
         c.when_called do |args, options|
           options.default(decrypt: true, ssm_root: '/')
@@ -41,12 +41,14 @@ module SsmUtils
           the reverse of the mappings used by get.
         EOF
         c.option '--file FILE', String, 'File to retrieve account to.'
+        c.option '--retry-limit INTEGER', Integer, 'increase retry limit, default 3'
         c.option '--[no-]overwrite', 'Overwrite exitings strings, default true'
         c.when_called do |args, options|
-          options.default(overwrite: true)
+          options.default(overwrite: true, retry_limit: 3)
           PutParamsCommand.new(
             in_file: options.file,
-            overwrite: options.overwrite
+            overwrite: options.overwrite,
+            retry_limit: options.retry_limit
           ).execute
         end
       end
