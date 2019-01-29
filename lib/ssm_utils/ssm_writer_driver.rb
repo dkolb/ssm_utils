@@ -7,13 +7,14 @@ module SsmUtils
 
     def initialize(options)
       options = {
-        overwrite: false
+        overwrite: false,
+        retry_limit: 3
       }.merge(options)
 
       raise ArgumentError('Missing parameters') unless options.key? :parameters
 
       @parameters = options[:parameters]
-      @ssm = Aws::SSM::Client.new
+      @ssm = Aws::SSM::Client.new({retry_limit: options[:retry_limit]})
       @overwrite = options[:overwrite]
     end
 

@@ -6,12 +6,14 @@ module SsmUtils
   class PutParamsCommand
     def initialize(options)
       options = {
-        overwrite: false
+        overwrite: false,
+        retry_limit: 3
       }.merge(options)
 
       raise ArgumentError.new("No input file") unless options.key? :in_file
 
       @overwrite = options[:overwrite]
+      @retry_limit = options[:retry_limit]
       @in_file = options[:in_file]
     end
 
@@ -19,7 +21,8 @@ module SsmUtils
       parameters = YAML.load_file(@in_file)
       SsmWriterDriver.new(
         parameters: parameters,
-        overwrite:  @overwrite
+        overwrite:  @overwrite,
+        retry_limit:  @retry_limit
       ).write_parameters
     end
   end
