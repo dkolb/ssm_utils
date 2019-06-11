@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/dkolb/ssm_utils.svg?branch=master)](https://travis-ci.org/dkolb/ssm_utils)
 [![Gem Version](https://badge.fury.io/rb/ssm_utils.svg)](https://badge.fury.io/rb/ssm_utils)
-[![Dependency Status](https://gemnasium.com/badges/github.com/dkolb/ssm_utils.svg)](https://gemnasium.com/github.com/dkolb/ssm_utils)
 
 ## Introduction
 The intended workflow is to use `manage_ssm_params get` to retrieve a subtree
@@ -114,6 +113,7 @@ not work the way you intend it to from Ruby version to Ruby version.
 
     --[no-]overwrite
         Overwrite exitings strings, default true
+```
 
 Note that overwriting and putting are naieve.  They will blindly write values
 to the API whether they have changed or not.
@@ -131,10 +131,15 @@ interactive prompt that will allow you to experiment.
 
 Use `bundle rake install` to install the gem locally.
 
+## Other Similar Projects
+
+A Python project similar to this one is
+[`ssm-diff`](https://github.com/runtheops/ssm-diff).
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/dkolb/ssm_utils.
+https://github.com/dkolb/ssm_utils
 
 ## License
 
